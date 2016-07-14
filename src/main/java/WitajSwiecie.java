@@ -9,6 +9,13 @@ import java.util.Map;
 public class WitajSwiecie {
     public static void main(String[] args) {
 
+        dupa();
+
+        System.out.println("Witaj Piękny świecie  !");
+        System.out.println("Witaj ęą!");
+        }
+
+    private static void dupa() {
         Spark.staticFileLocation("/public");
 
         Spark.get("/Hello", (req, res) -> "<html><h1>Siema</h1>traaalalala</html>");
@@ -43,8 +50,5 @@ public class WitajSwiecie {
             model.put("surname", surname);
             return new ModelAndView(model, "ani_stronka.ftl");
         }, new FreeMarkerEngine());
-
-        System.out.println("Witaj Piękny świecie  !");
-        System.out.println("Witaj ęą!");
-        }
+    }
 }
