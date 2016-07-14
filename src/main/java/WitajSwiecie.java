@@ -23,6 +23,17 @@ public class WitajSwiecie {
             return new ModelAndView(model,"ani_stronka.ftl" );
         }, new FreeMarkerEngine());
 
+        Spark.post("/travel", (req, res) -> {
+            String name = req.queryParams("name");
+            if (name == null || "".equals(name)) {
+                name = "Stranger";
+            }
+            Map<String, Object> model = new HashMap<>();
+            model.put("name", name);
+            return new ModelAndView(model,"ani_stronka.ftl" );
+        }, new FreeMarkerEngine());
+
+
         System.out.println("Witaj Piękny świecie  !");
         System.out.println("Witaj ęą!");
     }
