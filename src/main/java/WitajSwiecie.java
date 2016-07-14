@@ -28,12 +28,13 @@ public class WitajSwiecie {
 
     private static ModelAndView dupa(Request req) {
         String name = req.queryParams("name");
-        if (name == null || "".equals(name)) {
+
+        if (name == null) {
             name = "";
         }
 
         String surname = req.queryParams("surname");
-        if (surname == null || "".equals(surname)) {
+        if (surname == null ) {
             surname = "";
         }
         if ( ("".equals(name)) && ("".equals(surname))) {
