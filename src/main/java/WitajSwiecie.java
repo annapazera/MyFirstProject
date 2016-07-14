@@ -35,9 +35,9 @@ public class WitajSwiecie {
         String surname = req.queryParams("surname");
         if (surname == null || "".equals(surname)) {
             surname = "";
-            if ( (name == null || "".equals(name)) && (surname== null || "".equals(surname))) {
-                name ="stranger";
-            }
+        }
+        if ( ("".equals(name)) && ("".equals(surname))) {
+            name ="stranger";
         }
         Map<String, Object> model = new HashMap<>();
         model.put("name", name);
