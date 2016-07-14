@@ -19,6 +19,8 @@
             color:rgb(245, 84, 245)
         }
     </style>
+
+        <h1>Hello ${name}!</h1>
         <h2 id="tytulik">Travel to Cinque Terre</h2>
        
         <h2 class="nagloweczek">  Where is it? </h2>
