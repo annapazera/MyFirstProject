@@ -7,7 +7,7 @@ public class WitajSwiecie
 	      Spark.staticFileLocation("/public");
 
 		Spark.get("/Hello",(req, res) -> "<html><h1>Siema</h1>traaalalala</html>");
-		System.out.println("Witaj Piêkny wiecie  !");
+		System.out.println("Witaj Piękny świecie  !");
 		System.out.println("Witaj ęą!");
 	}
 }
