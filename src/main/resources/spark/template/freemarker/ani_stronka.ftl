@@ -20,7 +20,7 @@
         }
     </style>
 
-        <h1>Hello ${name} ${surname}!</h1>
+        <h1>Hello ${name} ${surname}! Your magic number is: ${jakis_atrybut}</h1>
         <h2 id="tytulik">Travel to Cinque Terre</h2>
        
         <h2 class="nagloweczek">  Where is it? </h2>

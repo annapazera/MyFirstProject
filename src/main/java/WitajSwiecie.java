@@ -43,6 +43,7 @@ public class WitajSwiecie {
         Map<String, Object> model = new HashMap<>();
         model.put("name", name);
         model.put("surname", surname);
+        model.put("jakis_atrybut", 123);
         return new ModelAndView(model,"ani_stronka.ftl" );
     }
 }
