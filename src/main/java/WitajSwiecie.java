@@ -22,6 +22,12 @@ public class WitajSwiecie {
             return dupa(req);
         }, new FreeMarkerEngine());
 
+        Spark.get("/dupa", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            model.put("warzywo", "ziemniak");
+            return new ModelAndView(model,"warzywa.ftl" );
+        }, new FreeMarkerEngine());
+
         System.out.println("Witaj Piękny świecie  !");
         System.out.println("Witaj ęą!");
         }
