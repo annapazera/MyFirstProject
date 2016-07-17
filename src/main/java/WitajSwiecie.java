@@ -20,19 +20,27 @@ public class WitajSwiecie {
             return dupa(req);
         }, new FreeMarkerEngine());
 
-        Spark.post("/travel", (req, res) -> {
-            return dupa(req);
-        }, new FreeMarkerEngine());
 
         Spark.get("/dupa", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             model.put("warzywo", "ziemniak");
-            return new ModelAndView(model,"warzywa.ftl" );
+            return new ModelAndView(model, "warzywa.ftl");
+        }, new FreeMarkerEngine());
+
+        Spark.get("/recipe", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            String name = req.queryParams("name");
+
+            if (name == null) {
+                name = "";
+            }
+            model.put("name", name);
+            return new ModelAndView(model, "RecipeBook.ftl");
         }, new FreeMarkerEngine());
 
         System.out.println("Witaj Piękny świecie  !");
         System.out.println("Witaj ęą!");
-        }
+    }
 
     private static ModelAndView dupa(Request req) {
         String name = req.queryParams("name");
@@ -42,16 +50,17 @@ public class WitajSwiecie {
         }
 
         String surname = req.queryParams("surname");
-        if (surname == null ) {
+        if (surname == null) {
             surname = "";
         }
-        if ( ("".equals(name)) && ("".equals(surname))) {
-            name ="stranger";
+        if (("".equals(name)) && ("".equals(surname))) {
+            name = "stranger";
         }
+
         Map<String, Object> model = new HashMap<>();
         model.put("name", name);
         model.put("surname", surname);
         model.put("jakis_atrybut", 123);
-        return new ModelAndView(model,"ani_stronka.ftl" );
+        return new ModelAndView(model, "ani_stronka.ftl");
     }
 }
