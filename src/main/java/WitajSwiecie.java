@@ -14,7 +14,7 @@ public class WitajSwiecie {
 
         Spark.staticFileLocation("/public");
 
-        Spark.get("/kalk", (req, res) -> {
+        Spark.get("/obliczenia", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             String Imię = req.queryParams("Imię");
             return new ModelAndView(model, "KalkulatorAni.ftl");
