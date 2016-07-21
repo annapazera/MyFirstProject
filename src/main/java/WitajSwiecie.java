@@ -8,17 +8,18 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class WitajSwiecie {
-    public static void main(String[] args) {
+            public static void main(String[] args) {
 
-        Spark.port(4567);
+                Spark.port(4567);
 
-        Spark.staticFileLocation("/public");
+                Spark.staticFileLocation("/public");
 
-        Spark.get("/obliczenia", (req, res) -> {
-            Map<String, Object> model = new HashMap<>();
-            String Imię = req.queryParams("Imię");
-            return new ModelAndView(model, "KalkulatorAni.ftl");
-        }, new FreeMarkerEngine());
+                Spark.get("/obliczenia", (req, res) -> {
+                    Map<String, Object> model = new HashMap<>();
+                    String imie = req.queryParams("imie");
+                    model.put("imie", imie);
+                    return new ModelAndView(model, "KalkulatorAni.ftl");
+                }, new FreeMarkerEngine());
 
 
 //        System.out.println(Imię + " podaj dwie dowolne liczby ");
