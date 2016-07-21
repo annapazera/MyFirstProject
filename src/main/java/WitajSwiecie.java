@@ -1,11 +1,11 @@
 import spark.ModelAndView;
-import spark.Request;
+
 import spark.Spark;
 import spark.template.freemarker.FreeMarkerEngine;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
+
 
 public class WitajSwiecie {
             public static void main(String[] args) {
@@ -20,6 +20,15 @@ public class WitajSwiecie {
                     model.put("imie", imie);
                     return new ModelAndView(model, "KalkulatorAni.ftl");
                 }, new FreeMarkerEngine());
+
+                Spark.get("/obliczenia", (req, res) -> {
+                    Map<String, Double> model = new HashMap<>();
+                    double liczba1 = Double.parseDouble(req.queryParams("liczba1"));
+                    model.put("liczba1", liczba1);
+                    return new ModelAndView(model, "KalkulatorAni.ftl");
+                }, new FreeMarkerEngine());
+
+
 
 
 //        System.out.println(Imię + " podaj dwie dowolne liczby ");
