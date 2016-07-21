@@ -23,8 +23,12 @@ public class WitajSwiecie {
                     Map<String, Object> model = new HashMap<>();
                     String imie = req.queryParams("imie");
                     double liczba1 = Double.parseDouble(req.queryParams("liczba1"));
+                    double liczba2= Double.parseDouble(req.queryParams("liczba2"));
+                    double wynik = kalkulator.dodawaj(liczba1, liczba2);
                     model.put("imie", imie);
                     model.put("liczba1", liczba1);
+                    model.put("liczba2", liczba2);
+                    model.put("wynik", wynik);
                     return new ModelAndView(model, "KalkulatorAni.ftl");
                 }, new FreeMarkerEngine());
 
