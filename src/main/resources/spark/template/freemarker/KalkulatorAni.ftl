@@ -11,7 +11,8 @@
     </head>
 <body>
 <h1> Kalkulator Ani się nie myli :-) </h1>
-<h2>  Witaj ${Imię}! Wynik działania na Twoich liczbach to </h2>
+<h2>  Witaj ${imie}! Wynik działania na Twoich liczbach to </h2>
+<h3> ${imie}, Twoja pierwsza liczba to: ${liczba1} </h3>
 </body>
 
 </html>
