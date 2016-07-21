@@ -14,16 +14,16 @@ public class WitajSwiecie {
 
                 Spark.staticFileLocation("/public");
 
+
+
+
+
+
                 Spark.get("/obliczenia", (req, res) -> {
                     Map<String, Object> model = new HashMap<>();
                     String imie = req.queryParams("imie");
-                    model.put("imie", imie);
-                    return new ModelAndView(model, "KalkulatorAni.ftl");
-                }, new FreeMarkerEngine());
-
-                Spark.get("/obliczenia", (req, res) -> {
-                    Map<String, Double> model = new HashMap<>();
                     double liczba1 = Double.parseDouble(req.queryParams("liczba1"));
+                    model.put("imie", imie);
                     model.put("liczba1", liczba1);
                     return new ModelAndView(model, "KalkulatorAni.ftl");
                 }, new FreeMarkerEngine());
