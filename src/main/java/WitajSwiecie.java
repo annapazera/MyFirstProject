@@ -26,23 +26,44 @@ public class WitajSwiecie {
                     double liczba2= Double.parseDouble(req.queryParams("liczba2"));
 
                     String dzialanie = req.queryParams("dzialanie");
-                    double wynik=0;
-                    if (dzialanie.equals("dodawanie")){
-                         wynik = kalkulator.dodawaj(liczba1, liczba2);
+                    double wynik;
+                    switch (dzialanie){
+                        case "dodawanie":
+                            wynik = kalkulator.dodawaj(liczba1, liczba2);
+
+                                    break;
+
+                        case "odejmowanie":
+                            wynik = kalkulator.odejmuj(liczba1, liczba2);
+                            break;
+
+                        case "mnożenie":
+                            wynik = kalkulator.mnoz(liczba1, liczba2);
+                            break;
+
+                        case "dzielenie":
+                            wynik = kalkulator.dziel(liczba1, liczba2);
+                            break;
+                        default:
+                            wynik=0;
+
 
                     }
-                    if (dzialanie.equals("odejmowanie")){
-                        wynik = kalkulator.odejmuj(liczba1, liczba2);
-
-                    }
-                    if (dzialanie.equals("mnożenie")){
-                        wynik = kalkulator.mnoz(liczba1, liczba2);
-
-                    }
-                    if (dzialanie.equals("dzielenie")){
-                        wynik = kalkulator.dziel(liczba1, liczba2);
-
-                    }
+//                    if (dzialanie.equals("dodawanie")){
+//                         wynik = kalkulator.dodawaj(liczba1, liczba2);
+//
+//                    } else if (dzialanie.equals("odejmowanie")){
+//                        wynik = kalkulator.odejmuj(liczba1, liczba2);
+//
+//                    } else if (dzialanie.equals("mnożenie")){
+//                        wynik = kalkulator.mnoz(liczba1, liczba2);
+//
+//                    } else if (dzialanie.equals("dzielenie")){
+//                        wynik = kalkulator.dziel(liczba1, liczba2);
+//
+//                    } else {
+//                        wynik = 0;
+//                    }
                     model.put("imie", imie);
                     model.put("liczba1", liczba1);
                     model.put("liczba2", liczba2);
